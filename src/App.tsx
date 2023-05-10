@@ -1,5 +1,5 @@
 import './App.css';
-import TableData from './Table-Structure/Table-data';
+import TableData from './Components/Table-Structure/Table-data';
 
 function App() {
   return (
