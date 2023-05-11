@@ -35,6 +35,8 @@ const TableData = () => {
             <td>98</td>
             <td>98</td>
             <td>98</td>
+            <td>EDIT</td>
+            <td>View</td>
           </tr>
         </tbody>
       </table>
