@@ -32,12 +32,9 @@ const TableData = () => {
             <td>80</td>
             <td>78</td>
             <td>98</td>
-            <td>
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-512/free-edit-943-528034.png?f=avif&w=256 width=50 height=50"
-                alt="No Img"
-              />
-            </td>
+            <td>98</td>
+            <td>98</td>
+            <td>98</td>
           </tr>
         </tbody>
       </table>
