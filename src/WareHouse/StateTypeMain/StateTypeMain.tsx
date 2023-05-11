@@ -1,7 +1,8 @@
 
 export type stateval = {value:number , name:string}
-
 export type StateType ={
+    id:number,
+    name:string,
     BP:stateval
     HR:stateval
     SBP:stateval
