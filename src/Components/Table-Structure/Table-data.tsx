@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ContextHealthMain from "../Context-Structure/ContextHealth-Main";
+import ContextHealthMain from "../../WareHouse/Context-Structure/ContextHealth-Main";
 import styless from "./TableStruct.module.scss";
 
 const TableData = () => {
@@ -12,7 +12,7 @@ const TableData = () => {
             <th>SR NO.</th>
             <th>Name</th>
             <th>Username</th>
-            <th>Blood Pressure(mmHg)</th>
+            <th>Blood Pressure</th>
             <th>Heart Rate</th>
             <th>Sistolic Blood Pressure</th>
             <th>Distolic Blood Pressure</th>
@@ -35,8 +35,8 @@ const TableData = () => {
             <td>98</td>
             <td>98</td>
             <td>98</td>
-            <td>EDIT</td>
-            <td>View</td>
+            <th><button>EDIT</button></th>
+            <th><button>VIEW</button></th>
           </tr>
         </tbody>
       </table>
