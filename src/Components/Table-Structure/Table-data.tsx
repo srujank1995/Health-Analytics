@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import ContextHealthMain from "../Context-Structure/ContextHealth-Main";
-
+import styless from "./TableStruct.module.scss"
 const TableData = () => {
     const TableContext = useContext(ContextHealthMain)
     return(
-        <div>
-    <table>
+        <div >
+    <table className={styless["Table-Main"]}>
       <thead>
         <tr>
           <th>SR NO.</th>
