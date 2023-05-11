@@ -1,5 +1,8 @@
-const TableData = () => {
+import { useContext } from "react";
+import ContextHealthMain from "../Context-Structure/ContextHealth-Main";
 
+const TableData = () => {
+    const TableContext = useContext(ContextHealthMain)
     return(
         <div>
     <table>
