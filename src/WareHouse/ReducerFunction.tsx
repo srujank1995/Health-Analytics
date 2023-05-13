@@ -26,8 +26,5 @@ const ReducerFunction = (state=initialstate, action:any) => {
         default:
             break;
     }
-    return(
-
-    )
 }
 export default ReducerFunction;
