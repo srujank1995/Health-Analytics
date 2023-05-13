@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ContextHealthMain from "../../WareHouse/Context-Structure/ContextHealth-Main";
+import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 import styless from "./TableStruct.module.scss";
-import { StateType } from "../../WareHouse/Context-Structure/StateTypeMain";
+import { StateType } from "../../Context-Structure/StateTypeMain";
 
 const TableData = () => {
   const { UserVal } = useContext(ContextHealthMain);

@@ -21,6 +21,11 @@ const ReducerFunction = (NewState = initialstate, action: any) => {
       return {
         ...NewState,
       };
+      
+      case "SET_USER_DATA":
+        return{
+          ...action.payload.UserVal
+        }
 
     default:
       break;
