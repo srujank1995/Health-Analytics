@@ -26,3 +26,7 @@ export const Update_DBP = "Update_DBP"
 export const Update_BTemp = "Update_BTemp"
 export const Update_SR = "Update_SR"
 export const Update_SL = "Update_SL"
+
+export const View_mode = "View"
+export const Edit_mode = "Edit"
+export type VIEW_EDIT = 'View' | 'Edit'

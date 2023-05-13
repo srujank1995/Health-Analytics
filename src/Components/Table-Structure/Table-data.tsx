@@ -1,17 +1,21 @@
 import { useContext } from "react";
-import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 import styless from "./TableStruct.module.scss";
-import { StateType } from "../../Context-Structure/StateTypeMain";
+import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
+import { Edit_mode, StateType, View_mode } from "../../Context-Structure/StateTypeMain";
+
 
 const TableData = () => {
-  const { UserVal } = useContext(ContextHealthMain);
+  const { UserVal ,CurrentpageFn,EditDataFn  } = useContext(ContextHealthMain);
 
   const EditFn = (userData: StateType) => {
     console.table(userData);
+    CurrentpageFn(Edit_mode);
+    EditDataFn(userData);
   };
 
   const ViewFn = (userData: StateType) => {
     console.table(userData);
+    CurrentpageFn(View_mode)
   };
 
   const TableMap = UserVal.map((user) => {
@@ -63,3 +67,11 @@ const TableData = () => {
   );
 };
 export default TableData;
+function CurrentpageFn(Edit: any) {
+  throw new Error("Function not implemented.");
+}
+
+function EditDataFn(userData: StateType) {
+  throw new Error("Function not implemented.");
+}
+
