@@ -4,17 +4,17 @@ import styless from "./TableStruct.module.scss";
 import { StateType } from "../../WareHouse/Context-Structure/StateTypeMain";
 
 const TableData = () => {
-  const { users } = useContext(ContextHealthMain);
+  const { UserVal } = useContext(ContextHealthMain);
 
   const EditFn = (userData: StateType) => {
-    console.table(EditFn);
+    console.table(userData);
   };
 
   const ViewFn = (userData: StateType) => {
-    console.table(ViewFn);
+    console.table(userData);
   };
 
-  const TableMap = users.map((user) => {
+  const TableMap = UserVal.map((user) => {
     return (
       <tr key={user.id}>
         <td>{user.id}</td>

@@ -1,8 +1,11 @@
 import React from 'react'
+import TableData from '../Table-Structure/Table-data'
 
 const  ViewHealthRecords = ()=> {
   return (
-    <div>ViewHealthRecords</div>
+    <div>
+      <TableData />
+    </div>
   )
 }
 
