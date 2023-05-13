@@ -4,27 +4,40 @@ import styless from "./TableStruct.module.scss";
 import { StateType } from "../../WareHouse/StateTypeMain/StateTypeMain";
 
 const TableData = () => {
-  const {users} = useContext(ContextHealthMain);
+  const { users } = useContext(ContextHealthMain);
 
-  const TableMap = users.map(user =>{
-          <tr>
-            <td>{user.id}</td>
-            <td>{user.name}</td>
-            <td>{user.BP.name}</td>
-            <td>{user.HR.name}</td>
-            <td>{user.SBP.name}</td>
-            <td>{user.DBP.name}</td>
-            <td>{user.BTemp.name}</td>
-            <td>{user.SR.name}</td>
-            <td>{user.SL.name}</td>
-            <td>{user.HR.name}</td>
-          </tr>
-  })
+  const EditFn = (userData: StateType) => {
+    console.table(EditFn);
+  };
 
-  const OnEditFn = (UserData:StateType) =>{
-    console.table(UserData)
+  const ViewFn = (userData: StateType) => {
+    console.table(ViewFn);
+  };
 
-  }
+  const TableMap = users.map((user) => {
+    return (
+      <tr key={user.id}>
+        <td>{user.id}</td>
+        <td>{user.name}</td>
+        <td>{user.BP.value}</td>
+        <td>{user.HR.value}</td>
+        <td>{user.SBP.value}</td>
+        <td>{user.DBP.value}</td>
+        <td>{user.BTemp.value}</td>
+        <td>{user.SR.value}</td>
+        <td>{user.SL.value}</td>
+        <td>{user.HR.value}</td>
+
+        <th>
+          <button onClick={() => EditFn(user)}>Edit</button>
+        </th>
+        <th>
+          <button onClick={() => ViewFn(user)}>View</button>
+        </th>
+      </tr>
+    );
+  });
+
   return (
     <div>
       <table className={styless["Table-Main"]}>
@@ -40,26 +53,11 @@ const TableData = () => {
             <th>Body Temperature</th>
             <th>Sugar level</th>
             <th>Stress level</th>
-            <th><button onClick={()=>OnEditFn(user)}>EDIT</button></th>
-            <th>VIEW</th>
+            <th>Edit</th>
+            <th>View</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>XYZ</td>
-            <td>ABC</td>
-            <td>120/80</td>
-            <td>80</td>
-            <td>78</td>
-            <td>98</td>
-            <td>98</td>
-            <td>98</td>
-            <td>98</td>
-            <th><button>EDIT</button></th>
-            <th><button>VIEW</button></th>
-          </tr>
-        </tbody>
+        <tbody>{TableMap}</tbody>
       </table>
     </div>
   );

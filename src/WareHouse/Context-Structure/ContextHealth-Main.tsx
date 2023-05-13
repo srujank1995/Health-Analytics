@@ -17,15 +17,15 @@ const ContextHealthMain= createContext({
 })
 export const ContextHealthMainWrapper:React.FC<any>=(props)=>{
    const users: StateType[]=[{
-    id:0,
-    name:"",
+    id:1,
+    name:"Test_Name",
     BP: { value: 0, name: "Blood Pressure" },
     HR: { value: 0, name: "Heart Rate" },
     SBP: { value: 0, name: "Sistolic Blood Pressure" },
     DBP: { value: 0, name: "Distolic Blood Pressure" },
     BTemp: { value: 0, name: "Body Temperature" },
     SR: { value: 0, name: "Sugar level" },
-    SL: { value: 0, name: "Stress level" },
+    SL: { value:0, name: "Stress level" },
     }]
     const {children} = props;
     return (
