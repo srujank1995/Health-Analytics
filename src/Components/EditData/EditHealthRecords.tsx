@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import {
   StateType,
   Update_BP,
@@ -12,8 +12,7 @@ import {
 import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 
 const EditHealthRecords = () => {
-  const ModalRef: any = useRef();
-  const { editUserData, ModalFun, setInputData, initialValue } =useContext(ContextHealthMain);
+  const { editUserData } =useContext(ContextHealthMain);
   return (
     <div>
       <ul>
@@ -47,13 +46,9 @@ const EditHealthRecords = () => {
       <br></br>
       <input
         type="number"
-        value={initialValue}
-        onChange={(e) => {
-          setInputData(parseInt(e.target.value));
-        }}
       />
       <br></br>
-      <select id="health" ref={ModalRef}>
+      <select id="health">
         <option value={Update_BP}>{editUserData.BP.name}</option>
         <option value={Update_HR}>{editUserData.HR.name}</option>
         <option value={Update_SBP}>{editUserData.SBP.name}</option>
@@ -63,7 +58,7 @@ const EditHealthRecords = () => {
         <option value={Update_SL}>{editUserData.SL.name}</option>
       </select>
       <br></br>
-      <button type="button" onClick={() => ModalFun(ModalRef.current.value)}>
+      <button type="button">
         Submit Details
       </button>
     </div>
