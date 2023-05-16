@@ -15,7 +15,10 @@ import styless from "./EditHealthRecords.module.scss";
 const EditHealthRecords = () => {
   const { editUserData } = useContext(ContextHealthMain);
   return (
-    <div className={styless['Main-Container']}>
+    <div className={styless["Main-Container"]}>
+      <h2>
+        HEALTH UPDATE
+      </h2>
       <ol className={styless["label-Main"]}>
         <li>
           {editUserData.BP.name} : {editUserData.BP.value}
@@ -45,10 +48,14 @@ const EditHealthRecords = () => {
       <label className={styless["label-Main"]}>Name:-{editUserData.name}</label>
       <br></br>
       <br></br>
-      <input className={styless['Input-Main']} type="number" placeholder="Enter Value" />
+      <input
+        className={styless["Input-Main"]}
+        type="number"
+        placeholder="Enter Value"
+      />
       <br></br>
       <br></br>
-      <select id="health" className={styless['Select-Main']}>
+      <select id="health" className={styless["Select-Main"]}>
         <option value={Update_BP}>{editUserData.BP.name}</option>
         <option value={Update_HR}>{editUserData.HR.name}</option>
         <option value={Update_SBP}>{editUserData.SBP.name}</option>
@@ -59,7 +66,9 @@ const EditHealthRecords = () => {
       </select>
       <br></br>
       <br></br>
-      <button type="button" className={styless["Btn-Main"]}>Submit Details</button>
+      <button type="button" className={styless["Btn-Main"]}>
+        Submit Details
+      </button>
     </div>
   );
 };

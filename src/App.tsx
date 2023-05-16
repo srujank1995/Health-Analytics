@@ -6,10 +6,15 @@ function App() {
   
   return (
     <ContextHealthMainWrapper>
-      <h2 className={styless["Heading-main"]}>HEALTH MONITOR</h2>
-    <div className="App">
-      <ParentComponent/>
-    </div>
+      <div className={styless["Heading-main"]}>
+
+        <h2 className={styless['h2']}> HEALTH MONITOR</h2>
+        <ParentComponent/>
+      </div>
+    
+    
+      
+
     </ContextHealthMainWrapper>
   );
 }
