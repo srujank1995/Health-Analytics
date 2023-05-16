@@ -15,7 +15,7 @@ import styless from "./EditHealthRecords.module.scss";
 const EditHealthRecords = () => {
   const { editUserData } = useContext(ContextHealthMain);
   return (
-    <div>
+    <div className={styless['Main-Container']}>
       <ol className={styless["label-Main"]}>
         <li>
           {editUserData.BP.name} : {editUserData.BP.value}
