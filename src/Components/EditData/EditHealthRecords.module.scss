@@ -1,0 +1,107 @@
+//************* Label CSS *********** //
+
+.label-Main{
+    margin-top: 0;
+    margin-left: 3.5%;
+    padding: 5px;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+//************* Button CSS *********** //
+
+
+.Btn-Main {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin-left: 3.5%;
+  margin-top: 1.5%;
+  
+  min-height: 3rem;
+  padding: 5px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.Btn-Main:hover,
+.Btn-Main:focus {
+border-color: rgba(0, 0, 0, 0.927);
+box-shadow: rgba(0, 0, 0, 0.733) 0 4px 12px;
+color: rgba(0, 0, 0, 0.9);
+}
+.Btn-Main:hover {
+    transform: translateY(-1px);
+    }
+.Btn-Main:active {
+background-color: #F0F0F1;
+border-color: rgba(0, 0, 0, 0.15);
+box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+color: rgba(0, 0, 0, 0.65);
+transform: translateY(0);
+}
+
+
+//************* Select CSS *********** //
+
+
+.Select-Main {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 4em;
+    border-radius: .25em;
+    overflow: hidden;
+    margin-left: 3.5%;
+    margin-top: 1.5%;
+    padding: 5px;
+    font-family: monospace;
+    margin-top: 2%;
+  
+  
+}
+.Select-Main::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+/* Transition */
+.Select-Main:hover::after {
+color: #f39c12;
+}
+
+//************* Input CSS *********** //
+.Input-Main{
+
+  position: relative;
+  margin-top: 1.5%;
+  margin-left: 3.5%;
+  width: 90%;
+  max-width: 280px;
+  height: 40px;
+}
+.Input-Main::placeholder{
+    font-size: larger;
+    font-family: monospace;
+    font-weight: 580;
+    }

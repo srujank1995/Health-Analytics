@@ -10,12 +10,13 @@ import {
   Update_SR,
 } from "../../Context-Structure/StateTypeMain";
 import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
+import styless from "./EditHealthRecords.module.scss";
 
 const EditHealthRecords = () => {
-  const { editUserData } =useContext(ContextHealthMain);
+  const { editUserData } = useContext(ContextHealthMain);
   return (
     <div>
-      <ul>
+      <ol className={styless["label-Main"]}>
         <li>
           {editUserData.BP.name} : {editUserData.BP.value}
         </li>
@@ -37,18 +38,17 @@ const EditHealthRecords = () => {
         <li>
           {editUserData.SL.name} : {editUserData.SL.value}
         </li>
-      </ul>
-      <label>ID:-</label>
+      </ol>
+      <label className={styless["label-Main"]}>ID:-{editUserData.id}</label>
       <br></br>
-      <input type="number" value={editUserData.id} />
       <br></br>
-      <input type="text" value={editUserData.name} />
+      <label className={styless["label-Main"]}>Name:-{editUserData.name}</label>
       <br></br>
-      <input
-        type="number"
-      />
       <br></br>
-      <select id="health">
+      <input className={styless['Input-Main']} type="number" placeholder="Enter Value" />
+      <br></br>
+      <br></br>
+      <select id="health" className={styless['Select-Main']}>
         <option value={Update_BP}>{editUserData.BP.name}</option>
         <option value={Update_HR}>{editUserData.HR.name}</option>
         <option value={Update_SBP}>{editUserData.SBP.name}</option>
@@ -58,9 +58,8 @@ const EditHealthRecords = () => {
         <option value={Update_SL}>{editUserData.SL.name}</option>
       </select>
       <br></br>
-      <button type="button">
-        Submit Details
-      </button>
+      <br></br>
+      <button type="button" className={styless["Btn-Main"]}>Submit Details</button>
     </div>
   );
 };

@@ -1,20 +1,17 @@
 import { Children, createContext, useReducer, useState } from "react";
-import ReducerFunction, { initialstate } from "./ReducerFunction";
+import ReducerFunction, { InitialStateValue, initialstate } from "./ReducerFunction";
 import { StateType, VIEW_EDIT, stateval } from "./StateTypeMain";
-import { Value } from "sass";
-import { type } from "os";
 
 const ContextHealthMain = createContext({
   UserVal: initialstate,
   currentStatePage: "View",
-  CurrentpageFn: (value: VIEW_EDIT) => {},
   editUserData:initialstate[0],
   EditDataFn:(userData:StateType) => {},
-
+  CurrentpageFn: (value: VIEW_EDIT) => {},
 });
 
 export const ContextHealthMainWrapper: React.FC<any> = (props) => {
-  const [NewState, dispatch] = useReducer(ReducerFunction, initialstate);
+  const [NewState, dispatch] = useReducer(ReducerFunction, InitialStateValue);
 
   const [currentStatePage, setCurrentStatePage] = useState<VIEW_EDIT>("View");
   const [editUserData, setEditUserData] = useState<StateType>(initialstate[0])
@@ -39,7 +36,7 @@ export const ContextHealthMainWrapper: React.FC<any> = (props) => {
   return (
     <ContextHealthMain.Provider
       value={{
-        UserVal: initialstate,
+        UserVal: NewState,
         currentStatePage: currentStatePage,
         CurrentpageFn: CurrentpageFn,
         editUserData:editUserData,

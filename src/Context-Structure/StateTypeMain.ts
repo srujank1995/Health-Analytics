@@ -29,4 +29,5 @@ export const Update_SL = "Update_SL"
 
 export const View_mode = "View"
 export const Edit_mode = "Edit"
-export type VIEW_EDIT = 'View' | 'Edit'
+export const Table_mode = "Table"
+export type VIEW_EDIT = 'View' | 'Edit' | 'Table'
