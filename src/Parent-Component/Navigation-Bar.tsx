@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import ContextHealthMain from '../Context-Structure/ContextHealth-Main';
 import context from 'react-bootstrap/esm/AccordionContext';
-import { Edit_mode, View_mode } from '../Context-Structure/StateTypeMain';
+import { Edit_mode, Table_mode, View_mode } from '../Context-Structure/StateTypeMain';
 import ViewHealthRecords from '../Components/ViewData/ViewHealthRecords';
 import EditHealthRecords from '../Components/EditData/EditHealthRecords';
 
@@ -23,17 +23,6 @@ const pages = ['Health App', 'Update Stats', 'View Stats'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
-
-    const {currentStatePage} = useContext(ContextHealthMain)
-    const setCurrentage = () =>{
-        if (currentStatePage === View_mode){
-            return(
-                <ViewHealthRecords/>
-            )
-        }else if(currentStatePage=== Edit_mode){
-            return(<EditHealthRecords/>)
-        }
-    };
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -47,12 +36,11 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (page:any) => {
-    CurrentpageFn(page);
+  const handleCloseNavMenu = () => {
+    CurrentpageFn(Edit_mode)
   };
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (

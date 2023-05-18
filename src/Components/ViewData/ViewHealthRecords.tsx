@@ -4,7 +4,7 @@ import TableData from '../Table-Structure/Table-data'
 const  ViewHealthRecords = ()=> {
   return (
     <div>
-      <TableData />
+      view data only 
     </div>
   )
 }

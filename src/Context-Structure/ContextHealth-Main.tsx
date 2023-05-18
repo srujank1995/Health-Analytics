@@ -1,10 +1,10 @@
 import { Children, createContext, useReducer, useState } from "react";
 import ReducerFunction, { InitialStateValue, initialstate } from "./ReducerFunction";
-import { StateType, VIEW_EDIT, stateval } from "./StateTypeMain";
+import { StateType, Table_mode, VIEW_EDIT, stateval } from "./StateTypeMain";
 
 const ContextHealthMain = createContext({
   UserVal: initialstate,
-  currentStatePage: "View",
+  currentStatePage: Table_mode,
   editUserData:initialstate[0],
   EditDataFn:(userData:StateType) => {},
   CurrentpageFn: (value: VIEW_EDIT) => {},
@@ -13,7 +13,7 @@ const ContextHealthMain = createContext({
 export const ContextHealthMainWrapper: React.FC<any> = (props) => {
   const [NewState, dispatch] = useReducer(ReducerFunction, InitialStateValue);
 
-  const [currentStatePage, setCurrentStatePage] = useState<VIEW_EDIT>("View");
+  const [currentStatePage, setCurrentStatePage] = useState<VIEW_EDIT>(Table_mode);
   const [editUserData, setEditUserData] = useState<StateType>(initialstate[0])
 
   const CurrentpageFn = (value: VIEW_EDIT) => {
