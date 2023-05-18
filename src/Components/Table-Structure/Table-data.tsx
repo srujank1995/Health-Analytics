@@ -31,7 +31,6 @@ const TableData = () => {
         <td>{user.BTemp.value}</td>
         <td>{user.SR.value}</td>
         <td>{user.SL.value}</td>
-        <td>{user.HR.value}</td>
 
         <th>
           <button onClick={() => EditFn(user)}>Edit</button>
@@ -50,7 +49,6 @@ const TableData = () => {
           <tr>
             <th>SR NO.</th>
             <th>Name</th>
-            <th>Username</th>
             <th>Blood Pressure</th>
             <th>Heart Rate</th>
             <th>Sistolic Blood Pressure</th>
