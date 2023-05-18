@@ -15,7 +15,8 @@ const TableData = () => {
 
   const ViewFn = (userData: StateType) => {
     console.table(userData);
-    CurrentpageFn(View_mode)
+    CurrentpageFn(View_mode);
+    EditDataFn(userData);
   };
 
   const TableMap = UserVal.map((user) => {
