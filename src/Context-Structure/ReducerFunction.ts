@@ -1,4 +1,4 @@
-import { StateType } from "./StateTypeMain";
+import { StateType, stateval } from "./StateTypeMain";
 
 export const initialstate: StateType[] = [
   {
@@ -54,9 +54,11 @@ const ReducerFunction = (NewState = initialstate, action: any) => {
   switch (action.type) {
     case "UPDATE_USER_HEALTH_DATA":
       console.log("state initial", NewState, action);
-      return {
+      const userID: number = NewState.findIndex((users:StateType) => users.id === action.userData.id)
+      NewState[userID] = action.userData;
+      return [
         ...NewState,
-      };
+      ];
       
       case "SET_USER_DATA":
         return{

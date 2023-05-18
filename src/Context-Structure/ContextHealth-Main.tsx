@@ -1,6 +1,7 @@
 import { Children, createContext, useReducer, useState } from "react";
 import ReducerFunction, { InitialStateValue, initialstate } from "./ReducerFunction";
 import { StateType, Table_mode, VIEW_EDIT, stateval } from "./StateTypeMain";
+import { type } from "@testing-library/user-event/dist/type";
 
 const ContextHealthMain = createContext({
   UserVal: initialstate,
@@ -21,15 +22,13 @@ export const ContextHealthMainWrapper: React.FC<any> = (props) => {
   };
 
   const EditDataFn = (userData:StateType) => {
-    setEditUserData(userData)
-  }
- 
-  const updatefn = (input:any) => {
-
-    dispatch({
-      payload: initialstate,
-      type:input
-    })
+    setEditUserData(userData);
+    const action = {
+      type : "UPDATE_USER_HEALTH_DATA",
+      userData
+    }
+    dispatch(action)
+    console.log("dispatch" , action)
   }
   
   const { children } = props;

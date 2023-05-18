@@ -14,12 +14,18 @@ import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 import styless from "./EditHealthRecords.module.scss";
 
 const EditHealthRecords = () => {
-  const { editUserData, CurrentpageFn } = useContext(ContextHealthMain);
+  const { editUserData, CurrentpageFn ,EditDataFn } = useContext(ContextHealthMain);
+  
+  const OnChangeData = (e:any) => {
+    console.log("e.name", e.target.value)
+    const NewDataUser = {...editUserData, name:e.target.value}
+    EditDataFn(NewDataUser)
+  };
   return (
     <div className={styless["Main-Container"]}>
       <h2>HEALTH UPDATE</h2>
       <br></br>
-      <ol className={styless["label-Main"]}>
+      <ol className={styless["label-Main-ol"]}>
         <li>
           {editUserData.BP.name} : {editUserData.BP.value}
         </li>
@@ -42,14 +48,20 @@ const EditHealthRecords = () => {
           {editUserData.SL.name} : {editUserData.SL.value}
         </li>
       </ol>
-      <label className={styless["label-Main"]}>ID:-{editUserData.id}</label>
+      <label className={styless["label-Main-ol"]}>ID:-{editUserData.id}</label>
       <br></br>
-
-      <label className={styless["label-Main"]}>Name:-{editUserData.name}</label>
+      <br></br>
+      <input
+        type="text"
+        className={styless["label-Main"]}
+        onChange={OnChangeData}
+        placeholder='Enter Name'
+      />
       <br></br>
 
       <input
         className={styless["Input-Main"]}
+        onChange={OnChangeData}
         type="number"
         placeholder="Enter Value"
       />
@@ -65,7 +77,7 @@ const EditHealthRecords = () => {
         <option value={Update_SL}>{editUserData.SL.name}</option>
       </select>
       <br></br>
-      <button type="button" className={styless["Btn-Main"]}>
+      <button type="button" onClick={OnChangeData} className={styless["Btn-Main"]}>
         Submit Details
       </button>
     </div>
