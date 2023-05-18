@@ -21,6 +21,11 @@ const EditHealthRecords = () => {
     const NewDataUser = {...editUserData, name:e.target.value}
     EditDataFn(NewDataUser)
   };
+  const OnChangeBP = (e:any) =>{
+    const BPNew = {...editUserData.BP, value:e.target.value}
+    const NewDataUser = {...editUserData, BP:BPNew}
+    EditDataFn(NewDataUser)
+  }
   return (
     <div className={styless["Main-Container"]}>
       <h2>HEALTH UPDATE</h2>
@@ -61,7 +66,7 @@ const EditHealthRecords = () => {
 
       <input
         className={styless["Input-Main"]}
-        onChange={OnChangeData}
+        onChange={OnChangeBP}
         type="number"
         placeholder="Enter Value"
       />
