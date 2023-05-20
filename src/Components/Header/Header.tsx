@@ -7,7 +7,7 @@ const  Header = ()  => {
         <ul className={styless['ul']} >
             <li className={styless['li']}><a href="/">Home</a> </li>
             <li className={styless['li']}><a href="/main">Main</a> </li>
-            <li className={styless['li']}><a href="/edit">Edit Data</a> </li>
+            <li className={styless['li']}><a href="/edit">View Stats</a> </li>
         </ul>
     </div>
   )
