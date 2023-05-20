@@ -1,8 +1,5 @@
 import styless from "./App.module.scss"
 import EditHealthRecords from "./Components/EditData/EditHealthRecords";
-import Header from "./Components/Header/Header";
-import HomePage from "./Components/HomePage/HomePage";
-import TableData from "./Components/Table-Structure/Table-data";
 import ViewHealthRecords from "./Components/ViewData/ViewHealthRecords";
 import { ContextHealthMainWrapper } from './Context-Structure/ContextHealth-Main';
 import ParentComponent from "./Parent-Component/ParentComponent";
@@ -19,8 +16,8 @@ const router = createBrowserRouter([
         element: <div><ParentComponent/></div>
       },
       {
-        path:"/edit",
-        element: <div><TableData/> </div>
+        path:"/edit/:userid",
+        element: <div><EditHealthRecords/> </div>
       },
       {
         path:'/view',
