@@ -20,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/edit",
-        element: <div><ViewHealthRecords/> </div>
+        element: <div><TableData/> </div>
+      },
+      {
+        path:'/view',
+        element: <div><ViewHealthRecords/></div>
       }
     ]
   }
@@ -32,7 +36,7 @@ function App() {
     
     <ContextHealthMainWrapper>
       <div className={styless["Heading-main"]}>
-        <Header/>
+        
         <RouterProvider router={router}/>
       </div>
     </ContextHealthMainWrapper>
