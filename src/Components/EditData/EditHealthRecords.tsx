@@ -12,8 +12,11 @@ import {
 } from "../../Context-Structure/StateTypeMain";
 import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 import styless from "./EditHealthRecords.module.scss";
+import { useParams } from "react-router-dom";
 
 const EditHealthRecords = () => {
+  const params = useParams();
+  console.table(params)
   const { editUserData, CurrentpageFn ,EditDataFn } = useContext(ContextHealthMain);
   
   const OnChangeData = (e:any) => {

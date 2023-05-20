@@ -2,21 +2,25 @@ import { useContext } from "react";
 import styless from "./TableStruct.module.scss";
 import ContextHealthMain from "../../Context-Structure/ContextHealth-Main";
 import { Edit_mode, StateType, View_mode } from "../../Context-Structure/StateTypeMain";
+import { useNavigate } from "react-router-dom";
 
 
 const TableData = () => {
   const { UserVal ,CurrentpageFn,EditDataFn  } = useContext(ContextHealthMain);
 
+  const NaviGate = useNavigate();
   const EditFn = (userData: StateType) => {
     console.table(userData);
     CurrentpageFn(Edit_mode);
     EditDataFn(userData);
+    NaviGate(`/edit/${userData.id}`)
   };
 
   const ViewFn = (userData: StateType) => {
     console.table(userData);
     CurrentpageFn(View_mode);
     EditDataFn(userData);
+    NaviGate('/view')
   };
 
   const TableMap = UserVal.map((user) => {
